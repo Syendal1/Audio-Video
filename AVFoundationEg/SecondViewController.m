@@ -8,13 +8,18 @@
 
 #import "SecondViewController.h"
 #import <AVFoundation/AVFoundation.h>
+
+//#import <MediaPlayer/MediaPlayer.h>
 #import <AVKit/AVKit.h>
 
 
 @interface SecondViewController (){
     UIView *colorView2;
-  //  AVPlayerViewController *videoPlayers;
-    MPMoviePlayerController *videoPlayer;
+    
+    AVPlayerViewController *videoPlayersController;
+    AVPlayer *videoPlayers;
+    
+   // MPMoviePlayerController *videoPlayer;
 }
 
 @end
@@ -42,23 +47,53 @@
 
 //    NSString *videoPath = [[NSBundle mainBundle] pathForResource:@"VideoName" ofType:@"m4v"];
 //    NSURL *videoStreamURL = [NSURL fileURLWithPath:videoPath];
-    //OR
+
+                 //OR//
+
     NSURL *videoStreamURL=[NSURL URLWithString:@"http://qthttp.apple.com.edgesuite.net/1010qwoeiuryfg/sl.m3u8"];
-    videoPlayer=[[MPMoviePlayerController alloc]initWithContentURL:videoStreamURL];
-    videoPlayer.view.frame=CGRectMake(0, 10, colorView2.frame.size.width, 400);
-    [videoPlayer prepareToPlay];
+
+    
+//    videoPlayer=[[MPMoviePlayerController alloc]initWithContentURL:videoStreamURL];
+//    videoPlayer.view.frame=CGRectMake(0, 10, colorView2.frame.size.width, 400);
+//    [colorView2 addSubview:videoPlayer.view];
+    
+    videoPlayers=[[AVPlayer alloc]initWithURL:videoStreamURL];
+    
+//    videoPlayers.view.frame=CGRectMake(0, 10, colorView2.frame.size.width, 400);
+//    videoPlayers.accessibilityFrame=CGRectMake(0, 0, 100, 100);
+//    [colorView2 addSubview:videoPlayers.accessibilityFrame];
+   
+    
+    //self->videoPlayersController.player=videoPlayers;
+    
+    //videoPlayersController.accessibilityFrame=CGRectMake(0, 0, 100, 100);
+    //[colorView2 addSubview:videoPlayersController.view];
+    
+    
+    
+    
+    
+    
+    
 }
 
 -(void)playVideoMethod{
     colorView2.backgroundColor=[UIColor yellowColor];
   
-    [colorView2 addSubview:videoPlayer.view];
-    [videoPlayer play];
+//    [videoPlayer play];
+    
+    [videoPlayers play];
 }
 
 -(void)stopVideoMethod{
     colorView2.backgroundColor=[UIColor blueColor];
-    [videoPlayer pause];
+  
+    //[videoPlayer pause];
+    
+    [videoPlayers pause];
+    
+
+
 }
 
 - (void)didReceiveMemoryWarning {

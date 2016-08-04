@@ -39,6 +39,7 @@
     ///**************//
     NSString *path = [[NSBundle mainBundle] pathForResource:@"SaturdaySong" ofType:@"mp3"];
     NSURL *soundURL = [NSURL fileURLWithPath:path];
+    //NSLog(@"Audio File Path= %@",soundURL);
     player = [[AVAudioPlayer alloc] initWithContentsOfURL:soundURL error:nil];
     ////////*********////
 }

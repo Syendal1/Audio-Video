@@ -58,22 +58,17 @@
 //    [colorView2 addSubview:videoPlayer.view];
     
     videoPlayers=[[AVPlayer alloc]initWithURL:videoStreamURL];
-    
-//    videoPlayers.view.frame=CGRectMake(0, 10, colorView2.frame.size.width, 400);
+
+//
+//    videoPlayers.view.frame = CGRectMake(0, 10, colorView2.frame.size.width, 400);
 //    videoPlayers.accessibilityFrame=CGRectMake(0, 0, 100, 100);
 //    [colorView2 addSubview:videoPlayers.accessibilityFrame];
    
     
-    //self->videoPlayersController.player=videoPlayers;
+    videoPlayersController.player=videoPlayers;
     
-    //videoPlayersController.accessibilityFrame=CGRectMake(0, 0, 100, 100);
-    //[colorView2 addSubview:videoPlayersController.view];
-    
-    
-    
-    
-    
-    
+    videoPlayersController.view.frame=CGRectMake(0, 0, 100, 100);
+    [colorView2 addSubview:videoPlayersController.view];
     
 }
 

@@ -52,21 +52,14 @@
 
     NSURL *videoStreamURL=[NSURL URLWithString:@"http://qthttp.apple.com.edgesuite.net/1010qwoeiuryfg/sl.m3u8"];
 
-    
+//    
 //    videoPlayer=[[MPMoviePlayerController alloc]initWithContentURL:videoStreamURL];
 //    videoPlayer.view.frame=CGRectMake(0, 10, colorView2.frame.size.width, 400);
 //    [colorView2 addSubview:videoPlayer.view];
+//
     
     videoPlayers=[[AVPlayer alloc]initWithURL:videoStreamURL];
-
-//
-//    videoPlayers.view.frame = CGRectMake(0, 10, colorView2.frame.size.width, 400);
-//    videoPlayers.accessibilityFrame=CGRectMake(0, 0, 100, 100);
-//    [colorView2 addSubview:videoPlayers.accessibilityFrame];
-   
-    
     videoPlayersController.player=videoPlayers;
-    
     videoPlayersController.view.frame=CGRectMake(0, 0, 100, 100);
     [colorView2 addSubview:videoPlayersController.view];
     
@@ -83,7 +76,7 @@
 -(void)stopVideoMethod{
     colorView2.backgroundColor=[UIColor blueColor];
   
-    //[videoPlayer pause];
+ //   [videoPlayer pause];
     
     [videoPlayers pause];
     

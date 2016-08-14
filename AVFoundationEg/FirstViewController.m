@@ -24,30 +24,36 @@
     colorView1.backgroundColor=[UIColor purpleColor];
     [self.view addSubview:colorView1];
     
-    UIButton *playAudioBtn=[[UIButton alloc]initWithFrame:CGRectMake(150, 100, 100, 100)];
-    [playAudioBtn setTitle:@"Play Audio" forState:UIControlStateNormal];
-    playAudioBtn.backgroundColor=[UIColor greenColor];
-    [colorView1 addSubview:playAudioBtn];
     
-    UIButton *stopAudioBtn=[[UIButton alloc]initWithFrame:CGRectMake(150, 350, 100, 100)];
-    [stopAudioBtn setTitle:@"Stop Audio" forState:UIControlStateNormal];
-    stopAudioBtn.backgroundColor=[UIColor redColor];
-    [colorView1 addSubview:stopAudioBtn];
+    UIToolbar *toolBar=[[UIToolbar alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height-150, self.view.frame.size.width, 100)];
+    [self.view addSubview:toolBar];
     
-    [playAudioBtn addTarget:self action:@selector(playAudioMethod) forControlEvents:UIControlEventTouchUpInside];
-    [stopAudioBtn addTarget:self action:@selector(stopAudioMethod) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *play=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemPlay target:self action:@selector(playAudioMethod)];
+    UIBarButtonItem *pause=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemPause target:self action:@selector(pauseAudioMethod)];
+    UIBarButtonItem *stop=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemStop target:self action:@selector(stopAudioMethod)];
+    UIBarButtonItem *flexibleSpace=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    
+    [toolBar setItems:@[play,flexibleSpace,pause,flexibleSpace,stop]];
+
     ///**************//
     NSString *path = [[NSBundle mainBundle] pathForResource:@"SaturdaySong" ofType:@"mp3"];
     NSURL *soundURL = [NSURL fileURLWithPath:path];
+    NSError *error;
     //NSLog(@"Audio File Path= %@",soundURL);
-    player = [[AVAudioPlayer alloc] initWithContentsOfURL:soundURL error:nil];
+    player = [[AVAudioPlayer alloc] initWithContentsOfURL:soundURL error:&error];
     ////////*********////
+    
 }
 
 -(void)playAudioMethod{
     colorView1.backgroundColor=[UIColor yellowColor];
     [player prepareToPlay];
     [player play];
+}
+
+-(void)pauseAudioMethod{
+    colorView1.backgroundColor=[UIColor greenColor];
+    [player pause];
 }
 
 -(void)stopAudioMethod{

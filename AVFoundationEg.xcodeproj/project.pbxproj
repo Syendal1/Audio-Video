@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E34AC5281D61071B00A19CE4 /* FunnyVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E34AC5271D61071B00A19CE4 /* FunnyVideo.mp4 */; };
 		E3D695FA1D5318CD00DD498D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E3D695F91D5318CD00DD498D /* main.m */; };
 		E3D695FD1D5318CD00DD498D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E3D695FC1D5318CD00DD498D /* AppDelegate.m */; };
 		E3D696001D5318CD00DD498D /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3D695FF1D5318CD00DD498D /* FirstViewController.m */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E34AC5271D61071B00A19CE4 /* FunnyVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = FunnyVideo.mp4; sourceTree = "<group>"; };
 		E3D695F51D5318CD00DD498D /* AVFoundationEg.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AVFoundationEg.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3D695F91D5318CD00DD498D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E3D695FB1D5318CD00DD498D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				E3D696121D531D4A00DD498D /* SaturdaySong.mp3 */,
+				E34AC5271D61071B00A19CE4 /* FunnyVideo.mp4 */,
 				E3D695FB1D5318CD00DD498D /* AppDelegate.h */,
 				E3D695FC1D5318CD00DD498D /* AppDelegate.m */,
 				E3D695FE1D5318CD00DD498D /* FirstViewController.h */,
@@ -157,6 +160,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E34AC5281D61071B00A19CE4 /* FunnyVideo.mp4 in Resources */,
 				E3D6960B1D5318CD00DD498D /* LaunchScreen.storyboard in Resources */,
 				E3D696081D5318CD00DD498D /* Assets.xcassets in Resources */,
 				E3D696131D531D4A00DD498D /* SaturdaySong.mp3 in Resources */,
@@ -325,6 +329,7 @@
 				E3D696111D5318CD00DD498D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

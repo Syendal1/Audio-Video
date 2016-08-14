@@ -8,18 +8,15 @@
 
 #import "SecondViewController.h"
 #import <AVFoundation/AVFoundation.h>
-
-//#import <MediaPlayer/MediaPlayer.h>
 #import <AVKit/AVKit.h>
 
 
 @interface SecondViewController (){
     UIView *colorView2;
     
-    AVPlayerViewController *videoPlayersController;
-    AVPlayer *videoPlayers;
+    AVPlayerViewController *videoPlayerController;
+    AVPlayer *videoPlayer;
     
-   // MPMoviePlayerController *videoPlayer;
 }
 
 @end
@@ -45,40 +42,32 @@
     [colorView2 addSubview:stopVideoBtn];
     [stopVideoBtn addTarget:self action:@selector(stopVideoMethod) forControlEvents:UIControlEventTouchUpInside];
 
-//    NSString *videoPath = [[NSBundle mainBundle] pathForResource:@"VideoName" ofType:@"m4v"];
-//    NSURL *videoStreamURL = [NSURL fileURLWithPath:videoPath];
+    NSString *videoPath = [[NSBundle mainBundle] pathForResource:@"FunnyVideo" ofType:@"mp4"];
+    NSURL *videoStreamURL = [NSURL fileURLWithPath:videoPath];
 
-                 //OR//
-
-    NSURL *videoStreamURL=[NSURL URLWithString:@"http://qthttp.apple.com.edgesuite.net/1010qwoeiuryfg/sl.m3u8"];
-
-//    
-//    videoPlayer=[[MPMoviePlayerController alloc]initWithContentURL:videoStreamURL];
-//    videoPlayer.view.frame=CGRectMake(0, 10, colorView2.frame.size.width, 400);
-//    [colorView2 addSubview:videoPlayer.view];
-//
     
-    videoPlayers=[[AVPlayer alloc]initWithURL:videoStreamURL];
-    videoPlayersController.player=videoPlayers;
-    videoPlayersController.view.frame=CGRectMake(0, 0, 100, 100);
-    [colorView2 addSubview:videoPlayersController.view];
+    videoPlayer=[AVPlayer playerWithURL:videoStreamURL];
+    videoPlayerController=[[AVPlayerViewController alloc]init];
+    videoPlayerController.player=videoPlayer;
+    videoPlayerController.view.frame=CGRectMake(0, 100, 400, 400);
+    [colorView2 addSubview:videoPlayerController.view];
     
 }
 
 -(void)playVideoMethod{
-    colorView2.backgroundColor=[UIColor yellowColor];
+  //  colorView2.backgroundColor=[UIColor yellowColor];
   
-//    [videoPlayer play];
+//    [mpVideoPlayer play];
     
-    [videoPlayers play];
+    [videoPlayer play];
 }
 
 -(void)stopVideoMethod{
-    colorView2.backgroundColor=[UIColor blueColor];
+    //colorView2.backgroundColor=[UIColor blueColor];
   
- //   [videoPlayer pause];
+   // [mpVideoPlayer pause];
     
-    [videoPlayers pause];
+    [videoPlayer pause];
     
 
 
